@@ -1,5 +1,8 @@
 package util;
 
-public class Status {
+public enum Status {
+    Jogador1_Ganhou, Jogador2_Ganhou
+
     
 }
+
