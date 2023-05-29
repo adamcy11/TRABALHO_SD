@@ -4,30 +4,34 @@ import java.io.Serializable;
 
 public class MsqReq implements Serializable {
    
- private String verRegra, nome1, aposta, numero;
- private char operacao;
+ private String EscolhaImpOuPar;
+ private double value1;
+ private Double ValorEscolha;
 
+public MsqReq(String escolhaImpOuPar, double value1, double ValorEscolh) {
+  EscolhaImpOuPar = escolhaImpOuPar;
+  this.value1 = value1;
+  this.ValorEscolha = ValorEscolha;
 
-public String getVerRegra() {
-  return verRegra;
 }
 
-public String getNome1() {
-  return nome1;
+
+
+public String getEscolhaImpOuPar() {
+  return EscolhaImpOuPar;
 }
 
-public String getAposta() {
-  return aposta;
+
+public double getValue1() {
+  return value1;
 }
 
-public String getNumero() {
-  return numero;
 
-  }
-
-public char getOperacao() {
-  return operacao;
-
-  }
+public Double getValorEscolha() {
+  return ValorEscolha;
 }
-  
+
+
+
+}
+
