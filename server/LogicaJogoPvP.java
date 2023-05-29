@@ -10,15 +10,18 @@ import util.MsqResp;
     
     //puxando o cliente para a thread
     
-    public class LogicaJogo extends Thread {
+    public class LogicaJogoPvP extends Thread {
         private Socket Cliente;
     
        
     
-        public LogicaJogo(Socket cliente) {
+        public LogicaJogoPvP(Socket cliente) {
             this.Cliente = Cliente;
         }
     
+
+
+        
     
         //o que o thread vai fzr 
         @Override
@@ -29,22 +32,13 @@ import util.MsqResp;
                ObjectInputStream in = new ObjectInputStream(Cliente.getInputStream());
                ObjectOutputStream out = new ObjectOutputStream(Cliente.getOutputStream());
     
-                  //pegando oque o cliente mandou para resolução
+             //pegando oque o cliente mandou para resolução
     
                MsqReq request = (MsqReq) in.readObject();
     
-               String VerRegra = request.getVerRegra();
-               String Nome1 = request.getNome1();
-               String aposta = request.getAposta();
-               String numero = request.getNumero();
-               char operacao = request.getOperacao();
-    
-    
-     
-    
-    
-    
-    
+               String EscolhaImpOuPar = request.getEscolhaImpOuPar();
+               double value1 = request.value1();
+
             } catch (Exception e) {
                 System.out.println("Erro:  " + e.getMessage());
            }

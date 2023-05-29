@@ -45,7 +45,6 @@ public class Cliente {
             System.out.println("Erro:  " + e.getMessage());
        }
 
-
        entrada.close();
     }  
 }
