@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class MsqResp implements Serializable {
     private Status status;
 
-
     public MsqResp(Status status) {
         this.status = status;
     }
@@ -13,9 +12,7 @@ public class MsqResp implements Serializable {
     public Status getStatus() {
         return status;
     }
- 
-
-
-    
-    
 }
+    
+    
+

@@ -36,8 +36,7 @@ import util.MsqResp;
     
                MsqReq request = (MsqReq) in.readObject();
     
-               String EscolhaImpOuPar = request.getEscolhaImpOuPar();
-               double value1 = request.value1();
+               
 
             } catch (Exception e) {
                 System.out.println("Erro:  " + e.getMessage());
