@@ -47,15 +47,12 @@ public class Cliente {
 
             MsqResp response = (MsqResp) in.readObject();
 
-
-
-            
-            if(response.getStatus() == Status.Maquina_Ganhou){
-                System.out.println("A MAQUINA GANHOU :( ");
-            }else{
-                if(response.getStatus() == Status.Jogador1_Ganhou)
-                System.out.println("GANHOU!! VOCÊ É O MELHOR!!");
+//fazendo com que apenas o primeiro cliente que digitou 1, apareça a msg de aguardando o proximo jogador
+            if (response.getStatus() == Status.Aguardando_Jogador && ValorEscolha == 1) {
+                System.out.println("Aguardando outro jogador...");
             }
+            
+     
 
     
 

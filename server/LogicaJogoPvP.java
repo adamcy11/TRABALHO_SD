@@ -1,4 +1,5 @@
 package server;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -6,45 +7,36 @@ import java.net.Socket;
 import util.MsqReq;
 import util.MsqResp;
 
-    
-    
-    //puxando o cliente para a thread
-    
-    public class LogicaJogoPvP extends Thread {
-        private Socket Cliente;
-    
-       
-    
-        public LogicaJogoPvP(Socket cliente) {
-            this.Cliente = Cliente;
-        }
-    
+public class LogicaJogoPvP extends Thread {
+    private Socket[] clientes;
 
+    public LogicaJogoPvP(Socket[] clientes) {
+        this.clientes = clientes;
+    }
 
+    @Override
+    public void run() {
+        //tratando para receber os dois clientes
+        try {
+            System.out.println("Connected with " + clientes[0].getInetAddress().getHostAddress() +
+                    " and " + clientes[1].getInetAddress().getHostAddress());
+
+            // Criando streams de entrada e saída para cada cliente
+            ObjectInputStream[] in = new ObjectInputStream[2];
+            ObjectOutputStream[] out = new ObjectOutputStream[2];
+            for (int i = 0; i < 2; i++) {
+                in[i] = new ObjectInputStream(clientes[i].getInputStream());
+                out[i] = new ObjectOutputStream(clientes[i].getOutputStream());
+            }
+
+            // Lógica do jogo PvP futuramente
         
-    
-        //o que o thread vai fzr 
-        @Override
-        public void run() {
-           try {
-               System.out.println("Conected with" + Cliente.getInetAddress().getHostAddress());
-    
-               ObjectInputStream in = new ObjectInputStream(Cliente.getInputStream());
-               ObjectOutputStream out = new ObjectOutputStream(Cliente.getOutputStream());
-    
-             //pegando oque o cliente mandou para resolução
-    
-               MsqReq request = (MsqReq) in.readObject();
-    
-               
 
-            } catch (Exception e) {
-                System.out.println("Erro:  " + e.getMessage());
-           }
-     
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
         }
     }
-    
+}
     
      
 

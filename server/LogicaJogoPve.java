@@ -17,6 +17,7 @@ public class LogicaJogoPve extends Thread {
 //o que o thread vai fzr 
 @Override
 public void run() {
+    //tratando para receber o unico cliente
    try {
        System.out.println("Conected with" + Cliente.getInetAddress().getHostAddress());
 
@@ -27,7 +28,7 @@ public void run() {
 
        MsqReq request = (MsqReq) in.readObject();
 
-
+    // Lógica do jogo Pve futuramente
 
     } catch (Exception e) {
         System.out.println("Erro:  " + e.getMessage());

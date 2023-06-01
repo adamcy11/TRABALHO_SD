@@ -13,6 +13,3 @@ public class MsqResp implements Serializable {
         return status;
     }
 }
-    
-    
-
