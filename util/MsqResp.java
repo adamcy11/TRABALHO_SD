@@ -3,13 +3,16 @@ package util;
 import java.io.Serializable;
 
 public class MsqResp implements Serializable {
-    private Status status;
+    
 
-    public MsqResp(Status status) {
-        this.status = status;
+    private String resultado;
+
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
     }
 
-    public Status getStatus() {
-        return status;
+    public String getResultado() {
+        return resultado;
     }
 }
