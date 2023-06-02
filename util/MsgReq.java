@@ -2,12 +2,12 @@ package util;
 
 import java.io.Serializable;
 
-public class MsqReq implements Serializable{
+public class MsgReq implements Serializable {
     private double value1;
+    private int value2;
     private char escolha;
-    private double value2;
-    
-    public MsqReq(double value1, double value2, char escolha) {
+
+    public MsgReq(double value1, int value2, char escolha) {
         this.value1 = value1;
         this.value2 = value2;
         this.escolha = escolha;
@@ -17,12 +17,11 @@ public class MsqReq implements Serializable{
         return value1;
     }
 
-    public double getvalue2() {
+    public int getValue2() {
         return value2;
     }
 
     public char getEscolha() {
         return escolha;
     }
-
 }

@@ -4,8 +4,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import util.MsqReq;
-import util.MsqResp;
+import util.MsgReq;
+import util.MsgResp;
 
 public class LogicaJogoPvP extends Thread {
     private Socket[] clientes;
