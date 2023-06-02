@@ -33,8 +33,18 @@ public class Cliente {
             while (true) {
                 System.out.println("Digite uma operação (I para ímpar e P para par): ");
                 escolha = entrada.nextLine().charAt(0); // pega apenas o primeiro caractere
-                System.out.println("Digite um número de 0 a 5: ");
-                value1 = Double.parseDouble(entrada.nextLine());
+                
+                // Trata o número digitado
+                while (true) {
+                    System.out.println("Digite um número de 0 a 5: ");
+                    value1 = Double.parseDouble(entrada.nextLine());
+                    if (value1 >= 0 && value1 <= 5) {
+                        break;
+                    } else {
+                        System.out.println("Número inválido. Digite novamente:");
+                    }
+                }
+
                 Random nuRandom = new Random();
                 int value2 = nuRandom.nextInt(5);
                 int resposta = (int) (value2 + value1);
